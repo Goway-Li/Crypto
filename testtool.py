@@ -64,7 +64,7 @@ def analyze_pattern_test(n, total, rand_func):
 
     chi = sum((o - e * groups) ** 2 / (e * groups) for o, e in zip(stats, theoretical))
 
-    print(">> 模式结构分布（4元组）")
+    print(">> 扑克分布 m=4")
     print("各模式出现次数:", stats)
     print(f"卡方值: {chi:.4f}\n")
 
