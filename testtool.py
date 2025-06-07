@@ -13,7 +13,7 @@ def analyze_lsb_distribution(n, total, rand_func):
     expected = total / 2
     chi = ((zero_count - expected) ** 2 + (one_count - expected) ** 2) / expected
 
-    print(">> 检查最低比特分布")
+    print(">> 单比特频数检测")
     print(f"0 出现次数: {zero_count}")
     print(f"1 出现次数: {one_count}")
     print(f"卡方统计量: {chi:.4f}\n")
@@ -28,7 +28,7 @@ def analyze_value_spread(n, total, rand_func):
     chi = sum((f - expected) ** 2 / expected for f in freq)
     p_val = 1.0 - 0.5 + erf(math.sqrt(chi / (2 * n)))
 
-    print(">> 整体分布均匀性检测")
+    print(">> 块内频数检测")
     print(f"卡方值: {chi:.4f}, P值: {p_val:.4f}\n")
 
 def analyze_pattern_test(n, total, rand_func):
